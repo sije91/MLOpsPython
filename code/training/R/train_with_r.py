@@ -10,8 +10,8 @@ model_name = "model.rds"
 run.upload_file(name="./outputs/" + model_name, path_or_stream=model_name)
 print("Uploaded the model {} to experiment {}".format(
     model_name, run.experiment.name))
-#dirpath = os.getcwd()
-##print(dirpath)
+# dirpath = os.getcwd()
+# print(dirpath)
 print("Following files are uploaded ")
 print(run.get_file_names())
 
