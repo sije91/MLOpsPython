@@ -15,4 +15,4 @@ os.system("cd " + "/dbfs/" + folder +
           " && Rscript r_train.r && ls -ltr model.rds")
 
 os.system("cp " + "/dbfs/" + folder +
-          "/model.rds /dbfs/Shared/models/model.rds")
+          "/model.rds /dbfs/ml/model.rds")
