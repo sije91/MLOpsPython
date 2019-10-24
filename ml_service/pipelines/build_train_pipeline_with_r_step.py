@@ -1,4 +1,4 @@
-from azureml.pipeline.steps import PythonScriptStep
+from azureml.pipeline.steps import RScriptStep
 from azureml.pipeline.core import Pipeline  # , PipelineData
 from azureml.core.runconfig import RunConfiguration, CondaDependencies
 # from azureml.core import Datastore
