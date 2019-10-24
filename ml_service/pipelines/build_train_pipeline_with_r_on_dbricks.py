@@ -50,8 +50,7 @@ def main():
         compute_target=aml_compute,
         allow_reuse=False
     )
-    
-    
+
     print("Step Train created")
 
     steps = [train_step]
