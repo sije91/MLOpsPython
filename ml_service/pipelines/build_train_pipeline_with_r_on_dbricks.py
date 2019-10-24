@@ -6,7 +6,6 @@ sys.path.append(os.path.abspath("./ml_service/util"))  # NOQA: E402
 from workspace import get_workspace
 from attach_compute import get_compute
 from azureml.pipeline.steps import DatabricksStep
-from azureml.pipeline.steps import RScriptStep
 
 
 def main():
@@ -41,26 +40,18 @@ def main():
     if aml_compute is not None:
         print(aml_compute)
 
-    # train_step = DatabricksStep(
-    #     name="DBPythonInLocalMachine",
-    #     num_workers=1,
-    #     python_script_name="train_with_r_on_databricks.py",
-    #     source_directory="code/training/R",
-    #     run_name='DB_Python_R_demo',
-    #     existing_cluster_id=db_cluster_id,
-    #     compute_target=aml_compute,
-    #     allow_reuse=False
-    # )
-    
-    train_step = RScriptStep(
-        name="Train Model",
-        script_name="r_train.r",
-        compute_target=aml_compute,
+    train_step = DatabricksStep(
+        name="DBPythonInLocalMachine",
+        num_workers=1,
+        python_script_name="train_with_r_on_databricks.py",
         source_directory="code/training/R",
-        allow_reuse=False,
+        run_name='DB_Python_R_demo',
+        existing_cluster_id=db_cluster_id,
+        compute_target=aml_compute,
+        allow_reuse=False
     )
-
-
+    
+    
     print("Step Train created")
 
     steps = [train_step]

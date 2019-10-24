@@ -7,7 +7,7 @@ steps:
    flake8 --output-file=$(Build.BinariesDirectory)/lint-testresults.xml --format junit-xml  
   workingDirectory: '$(Build.SourcesDirectory)'
   displayName: 'Run code quality tests'
-  enabled: 'false'
+  enabled: 'true'
   
 - script: |
    pytest --junitxml=$(Build.BinariesDirectory)/unit-testresults.xml $(Build.SourcesDirectory)/tests/unit
