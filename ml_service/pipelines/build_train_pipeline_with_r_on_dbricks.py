@@ -6,6 +6,7 @@ sys.path.append(os.path.abspath("./ml_service/util"))  # NOQA: E402
 from workspace import get_workspace
 from attach_compute import get_compute
 from azureml.pipeline.steps import DatabricksStep
+from azureml.pipeline.steps import RScriptStep
 
 
 def main():
